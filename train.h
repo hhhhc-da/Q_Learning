@@ -22,7 +22,7 @@ using env_type = unsigned;
 using map_type = double;
 // 游戏状态类型
 using status = unsigned;
-
+// 行类型
 using col_type = std::vector<map_type>;
 
 #define GAME_OVER 0
@@ -83,13 +83,6 @@ private:
     // 当前拥有的 Value 值
     map_type value;
 };
-
-// 枚举类型定义
-typedef enum
-{
-    VALUE = 0,
-    REWARD
-} mode;
 
 // 外部链接声明
 
