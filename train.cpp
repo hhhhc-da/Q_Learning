@@ -121,7 +121,7 @@ map_type ValueCalculate(Environment &env, act_type act, status &st)
     // 校验行为起点和当前环境是否匹配
     assert(roomIndex == recentAction.first && "Please input correct input");
 
-    // max( V(S',A')
+    // max( V(S',A') )
     auto col_next = GetValueVector(env, act.second);
 
     // 这里不可以直接 decltype(col_next(0)) 会得到引用
@@ -141,7 +141,7 @@ map_type ValueCalculate(Environment &env, act_type act, status &st)
         max_predict = 100;
     }
 
-    // Q_Learning: V(S,A) ← V(S,A) + α( γ( max( V(S',A') ) ) - V(S,A) )
+    // Q_Learning: V(S,A) ← V(S,A) + α( R(S,A) + γ( max( V(S',A') ) ) - V(S,A) )
     map_type newValue = value + learningRate * (RewardMatrix(act.first, act.second) + gamaRate * max_predict - value);
 
     // 更新 Value 表格
