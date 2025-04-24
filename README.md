@@ -1,5 +1,4 @@
-# Q_Learning
-A fundmental C++ Q_Learning reinforcement learning project.
+# Q 学习算法
 
 给出6个房间，其中有如下关系（两个房间之间互相连通记为<x,y>）:
 
